@@ -1,0 +1,5 @@
+c:\users\lee\documents\visual studio 2012\Projects\AngularJSExample\AngularJSExample\bin\AngularJSExample.dll
+c:\users\lee\documents\visual studio 2012\Projects\AngularJSExample\AngularJSExample\bin\AngularJSExample.pdb
+c:\users\lee\documents\visual studio 2012\Projects\AngularJSExample\AngularJSExample\obj\Debug\AngularJSExample.csprojResolveAssemblyReference.cache
+c:\users\lee\documents\visual studio 2012\Projects\AngularJSExample\AngularJSExample\obj\Debug\AngularJSExample.dll
+c:\users\lee\documents\visual studio 2012\Projects\AngularJSExample\AngularJSExample\obj\Debug\AngularJSExample.pdb

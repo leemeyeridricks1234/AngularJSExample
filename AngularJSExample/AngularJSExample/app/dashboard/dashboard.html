@@ -1,0 +1,76 @@
+﻿<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+            <ul class="nav nav-sidebar">
+                <li class="active"><a href="#">Overview</a></li>
+                <li><a href="#">Investment Reports</a></li>
+                <li><a href="#">Fund Prices</a></li>
+                <li><a href="#">Submit Transaction</a></li>
+                <li><a href="#">Investor Details</a></li>
+                <li><a href="#">Tax Certificates</a></li>
+                <li><a href="#">Forms</a></li>
+            </ul>
+            <ul class="nav nav-sidebar">
+                <li class="active"><a href="">Investment Summary</a></li>
+                <li><a href="">Manage Profile</a></li>
+                <li><a href="">What's New</a></li>
+            </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+            <h1 class="page-header">Dashboard</h1>
+
+            <div class="row placeholders">
+                <div class="col-xs-6 col-sm-3 placeholder">
+                    <img data-src="/holder.js/200x200/auto/sky" class="img-responsive" alt="Generic placeholder thumbnail">
+                    <h4>Label</h4>
+                    <span class="text-muted">Something else</span>
+                </div>
+                <div class="col-xs-6 col-sm-3 placeholder">
+                    <img data-src="/holder.js/200x200/auto/vine" class="img-responsive" alt="Generic placeholder thumbnail">
+                    <h4>Label</h4>
+                    <span class="text-muted">Something else</span>
+                </div>
+                <div class="col-xs-6 col-sm-3 placeholder">
+                    <img data-src="/holder.js/200x200/auto/sky" class="img-responsive" alt="Generic placeholder thumbnail">
+                    <h4>Label</h4>
+                    <span class="text-muted">Something else</span>
+                </div>
+                <div class="col-xs-6 col-sm-3 placeholder">
+                    <img data-src="/holder.js/200x200/auto/vine" class="img-responsive" alt="Generic placeholder thumbnail">
+                    <h4>Label</h4>
+                    <span class="text-muted">Something else</span>
+                </div>
+            </div>
+
+            <h2 class="sub-header">Top Performing Funds</h2>
+            Sort by:
+            <select ng-model="orderProp">
+                <option value="name">Alphabetical</option>
+                <option value="percentageMovement">% Movement</option>
+                <option value="yearToDate">Year to Date</option>
+            </select>
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Fund Name</th>
+                            <th>Code</th>
+                            <th>% Movement</th>
+                            <th>Year to Date</th>
+                            <th>Factsheet</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="fund in funds | filter:query | orderBy:orderProp" class="phone-listing">
+                            <td><a href="#/fund/{{fund.code}}">{{fund.name}}</a></td>
+                            <td>{{fund.code}}</td>
+                            <td>{{fund.percentageMovement}}%</td>
+                            <td>{{fund.yearToDate}}%</td>
+                            <td>June 2014</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

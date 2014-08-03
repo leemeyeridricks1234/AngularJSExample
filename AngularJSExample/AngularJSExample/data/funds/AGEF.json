@@ -1,0 +1,30 @@
+﻿[
+    {
+        "name": "Allan Gray Equity Fund",
+        "code": "AGEF",
+        "percentageMovement": -2.12,
+        "yearToDate": 12.12,
+        "link": "June 2014"
+    },
+    {
+        "name": "Allan Gray Balance Fund",
+        "code": "AGBF",
+        "percentageMovement": 1.44,
+        "yearToDate": 6.12,
+        "link": "June 2014"
+    },
+    {
+        "name": "Allan Gray Stable Fund",
+        "code": "AGSF",
+        "percentageMovement": 0.44,
+        "yearToDate": 7.12,
+        "link": "June 2014"
+    },
+    {
+        "name": "Allan Gray Optimal Fund",
+        "code": "AGOF",
+        "percentageMovement": 6.44,
+        "yearToDate": -2.12,
+        "link": "June 2014"
+    }
+]
