@@ -13,6 +13,10 @@ dashboardApp.config(['$routeProvider',
             templateUrl: 'app/dashboard/dashboard.html',
             controller: 'DashboardCtrl'
         }).
+          when('/dashboard/submitTransaction', {
+              templateUrl: 'app/dashboard/submit-transaction.html',
+              controller: 'SubmitTransactionCtrl'
+          }).
         when('/fund/:code', {
             templateUrl: 'app/fund/fund-detail.html',
             controller: 'FundDetailCtrl'
