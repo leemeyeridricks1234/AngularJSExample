@@ -1,0 +1,22 @@
+﻿TBD: detail view for <span>{{code}}</span>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Fund Name</th>
+            <th>Code</th>
+            <th>% Movement</th>
+            <th>Year to Date</th>
+            <th>Factsheet</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="fund in tempList">
+            <td><a href="#/fund/{{fund.code}}">{{fund.name}}</a></td>
+            <td>{{fund.code}}</td>
+            <td>{{fund.percentageMovement}}%</td>
+            <td>{{fund.yearToDate}}%</td>
+            <td>June 2014</td>
+        </tr>
+    </tbody>
+</table>

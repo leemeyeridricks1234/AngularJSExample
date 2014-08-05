@@ -8,3 +8,13 @@ C:\Work\git\AngularExample\AngularJSExample\AngularJSExample\bin\AngularJSExampl
 C:\Work\git\AngularExample\AngularJSExample\AngularJSExample\obj\Debug\AngularJSExample.csprojResolveAssemblyReference.cache
 C:\Work\git\AngularExample\AngularJSExample\AngularJSExample\obj\Debug\AngularJSExample.dll
 C:\Work\git\AngularExample\AngularJSExample\AngularJSExample\obj\Debug\AngularJSExample.pdb
+C:\working\pocs\git\AngularJSExample\AngularJSExample\AngularJSExample\bin\AngularJSExample.dll
+C:\working\pocs\git\AngularJSExample\AngularJSExample\AngularJSExample\bin\AngularJSExample.pdb
+C:\working\pocs\git\AngularJSExample\AngularJSExample\AngularJSExample\obj\Debug\AngularJSExample.csprojResolveAssemblyReference.cache
+C:\working\pocs\git\AngularJSExample\AngularJSExample\AngularJSExample\obj\Debug\AngularJSExample.dll
+C:\working\pocs\git\AngularJSExample\AngularJSExample\AngularJSExample\obj\Debug\AngularJSExample.pdb
+C:\working\pocs\git\Personal\AngularJSExample\AngularJSExample\AngularJSExample\bin\AngularJSExample.dll
+C:\working\pocs\git\Personal\AngularJSExample\AngularJSExample\AngularJSExample\bin\AngularJSExample.pdb
+C:\working\pocs\git\Personal\AngularJSExample\AngularJSExample\AngularJSExample\obj\Debug\AngularJSExample.csprojResolveAssemblyReference.cache
+C:\working\pocs\git\Personal\AngularJSExample\AngularJSExample\AngularJSExample\obj\Debug\AngularJSExample.dll
+C:\working\pocs\git\Personal\AngularJSExample\AngularJSExample\AngularJSExample\obj\Debug\AngularJSExample.pdb

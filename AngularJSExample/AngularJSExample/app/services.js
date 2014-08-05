@@ -5,6 +5,8 @@ agServices.factory('FundListService', ['$resource',
       return $resource('data/funds.json', {}, {
           query: { method: 'GET', isArray: true }
       });
+      //data/funds.json
+      //http://localhost:8081/api/funds
   }]);
 
 agServices.factory('FundDetailService', ['$resource',
