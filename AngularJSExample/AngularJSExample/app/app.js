@@ -7,20 +7,29 @@
 dashboardApp.config(['$routeProvider',
   function ($routeProvider) {
       $routeProvider.
-        when('/dashboard', {
+        when('/overview', {
             templateUrl: 'dashboard.html',
-            controller: 'DashboardCtrl'
+            controller: 'DashboardCtrl',
+            defaultSubView: 'investmentSummary'
         }).
-          when('/dashboard/submitTransaction', {
+          when('/overview/profile', {
+              templateUrl: 'manage-profile.html',
+              controller: 'ManageProfileCtrl'
+          }).
+          when('/submitTransaction', {
               templateUrl: 'submit-transaction.html',
               controller: 'SubmitTransactionCtrl'
           }).
-        when('/fund/:code', {
+        when('/funds/:code', {
             templateUrl: 'fund-detail.html',
             controller: 'FundDetailCtrl'
         }).
+          when('/funds', {
+              templateUrl: 'fund-detail.html',
+              controller: 'FundDetailCtrl'
+          }).
         otherwise({
-            redirectTo: '/dashboard'
+            redirectTo: '/overview'
         });
   }]);
 
@@ -33,6 +42,12 @@ dashboardControllers.controller(
 
         $scope.isOverview = true;
         $scope.isFundDetail = false;
+        $scope.isSubmitTransaction = false;
+
+        $scope.mainView = "overview";
+        $scope.subView = "profile";
+
+        //originalPath
 
         // Update the rendering of the page.
         render = function () {
@@ -40,15 +55,26 @@ dashboardControllers.controller(
             // Pull the "action" value out of the
             // currently selected route.
             if ($route.current.loadedTemplateUrl != undefined) {
+                var path = $route.current.originalPath;
+
+                var split = path.split('/');
+                if (split.length > 2) {
+                    $scope.mainView = split[1];
+                    $scope.subView = split[2];
+                }
+                else {
+                    $scope.mainView = split[1];
+                    $scope.subView = $route.current.defaultSubView;
+                }
+
                 var template = $route.current.loadedTemplateUrl;
 
                 // Reset the booleans used to set the class
                 // for the navigation.
-                var isOverview = (template == "dashboard.html");
-                var isFundDetail = (template == "fund-detail.html");
+                $scope.isOverview = (template == "dashboard.html");
+                $scope.isFundDetail = (template == "fund-detail.html");
+                $scope.isSubmitTransaction = (template == "submit-transaction.html");
                 
-                $scope.isFundDetail = isFundDetail;
-                $scope.isOverview = isOverview;
             }
 
 

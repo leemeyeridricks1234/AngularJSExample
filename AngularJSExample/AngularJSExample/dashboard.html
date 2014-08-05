@@ -43,7 +43,7 @@ Sort by:
         </thead>
         <tbody>
             <tr ng-repeat="fund in funds | filter:query | orderBy:orderProp" class="phone-listing">
-                <td><a href="#/fund/{{fund.code}}">{{fund.name}}</a></td>
+                <td><a href="#/funds/{{fund.code}}">{{fund.name}}</a></td>
                 <td>{{fund.code}}</td>
                 <td>{{fund.percentageMovement}}%</td>
                 <td>{{fund.yearToDate}}%</td>
