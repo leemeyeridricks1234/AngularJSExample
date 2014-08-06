@@ -14,6 +14,10 @@ case class Elevation(location: Location, elevation: Double)
 case class Location(lat: Double, lng: Double)
 case class GoogleElevationApiResult[T](status: String, results: List[T])
 
+case class User(username: String, personalDetails: PersonalDetails, contactDetails: ContactDetails)
+case class PersonalDetails(title: String, firstName: String, lastName: String, dateOfBirth: String, idNumber: String, investorNumber: String)
+case class ContactDetails(homePhone: String, workPhone: String, workFax: String, mobilePhone: String, email: String)
+
 
 object ModelJsonProtocol extends DefaultJsonProtocol {
   implicit val dataPointFormat = jsonFormat2(DataPoint)
@@ -28,4 +32,7 @@ object ModelJsonProtocol extends DefaultJsonProtocol {
   implicit val elevationFormat = jsonFormat2(Elevation)
   implicit def googleElevationApiResultFormat[T :JsonFormat] = jsonFormat2(GoogleElevationApiResult.apply[T])
 
+  implicit val contactFormat = jsonFormat5(ContactDetails)
+  implicit val personalFormat = jsonFormat6(PersonalDetails)
+  implicit val userFormat = jsonFormat3(User)
 }

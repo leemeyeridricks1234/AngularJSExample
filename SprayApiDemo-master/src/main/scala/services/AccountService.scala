@@ -10,30 +10,34 @@ import com.christophergagne.sprayapidemo.repositories.FundRepository
 import com.christophergagne.sprayapidemo.AccountProduct
 import spray.routing.RequestContext
 import com.christophergagne.sprayapidemo.AccountFundSummary
+import ModelJsonProtocol._
+import SprayJsonSupport._
 
 
-object AccountSummaryService {
-  case class Process(accountNumber: String)
+object AccountService {
+  case class GetSummary(accountNumber: String)
+  case class UpdateProfile(user: User)
 }
 
-class AccountSummaryService(requestContext: RequestContext) extends Actor {
+class AccountService(requestContext: RequestContext) extends Actor {
 
-  import AccountSummaryService._
+  import AccountService._
 
   implicit val system = context.system
   val log = Logging(system, getClass)
 
   def receive = {
-    case Process(accountNumber: String) =>
-      process(accountNumber)
+    case GetSummary(accountNumber: String) =>
+      getSummary(accountNumber)
+      context.stop(self)
+
+    case UpdateProfile(user: User) =>
+      updateProfile(user)
       context.stop(self)
   }
 
-  def process(accountNumber: String) = {
+  def getSummary(accountNumber: String) = {
     log.info("Requesting fund list")
-
-    import ModelJsonProtocol._
-    import SprayJsonSupport._
 
     val funds = new FundRepository().getFunds()
     val fundSummary1 = new AccountFundSummary(funds(0), 2343.1884, 100.0, funds(0).unitPrice * 2343.1884)
@@ -41,5 +45,11 @@ class AccountSummaryService(requestContext: RequestContext) extends Actor {
     val accountSummary1 = new AccountSummary(Seq(accountProduct1), 0.0, Seq(fundSummary1))
 
     requestContext.complete(accountSummary1)
+  }
+
+  def updateProfile(user: User) = {
+    log.info("Updating profile")
+
+    requestContext.complete(user)
   }
 }
