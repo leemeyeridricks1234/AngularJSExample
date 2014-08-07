@@ -1,9 +1,27 @@
-﻿dashboardControllers.controller('SubmitTransactionCtrl', ['$scope', '$routeParams', 'FundDetailService',
-  function ($scope, $routeParams, fundDetailService) {
-      $scope.code = $routeParams.code;
+﻿dashboardControllers.controller('SubmitTransactionCtrl', ['$scope', '$routeParams', 'FundListService',
+  function ($scope, $routeParams, fundListService) {
+      var instructionType = "Additional Contribution";
+      //$scope.code = $routeParams.code;
 
-      //can also use get
-      $scope.tempList = fundDetailService.query({ code: $routeParams.code }, function (funds) {
-          //$scope.tempList = funds;
+      $scope.funds = fundListService.query(function (funds) {
+          $scope.reset();
       });
+
+      $scope.instruction = {};
+      
+      $scope.accounts = [
+          { number: 'AGUT3432432', name: 'dark' },
+          { number: 'AGRA3432423', name: 'light' }
+      ];
+      
+      $scope.reset = function () {
+          $scope.instruction.account = $scope.accounts[0];
+          $scope.instruction.fund = $scope.funds[0];
+      };
+
+      $scope.submit = function (instruction) {
+          alert(instruction.fund);
+      };
+
+      
   }]);

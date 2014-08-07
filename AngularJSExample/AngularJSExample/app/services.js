@@ -15,3 +15,11 @@ agServices.factory('FundDetailService', ['$resource',
           query: { method: 'GET', params: { code: 'code' }, isArray: true }
       });
   }]);
+
+
+agServices.factory('InstructionService', ['$resource',
+  function ($resource) {
+      return $resource('data/instructions/', {}, {
+          create: { method: 'POST', params: { code: 'code' } }
+      });
+  }]);

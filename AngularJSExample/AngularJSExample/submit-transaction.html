@@ -1,1 +1,32 @@
-﻿TBD: Submit transaction
+﻿<h1 class="page-header">Submit Additional Contribution</h1>
+
+<form novalidate class="css-form">
+
+    <div class="form-group">
+        <label class="control-label" for="account_select">
+            <abbr title="required">*</abbr>
+            Account</label>
+        <div>
+            <select class="required form-control" ng-model="instruction.account"  ng-options="account.number for account in accounts"></select>
+            <p class="help-block">Lorem ipsum dolor sit amet</p>
+        </div>
+        <label class="control-label">
+            <abbr title="required">*</abbr>
+            Fund</label>
+        <div>
+            <select class="required form-control" ng-model="instruction.fund" ng-options="fund.name for fund in funds">
+            </select>
+            <p class="help-block">Lorem ipsum dolor sit amet</p>
+        </div>
+
+        <label class="amount required control-label">
+            <abbr title="required">*</abbr>Amount</label>
+        <div>
+            <input class="number amount required form-control" ng-model="amount" placeholder="R0.00" type="number" required  />
+            <p class="help-block">Lorem ipsum dolor sit amet</p>
+        </div>
+    </div>
+ 
+    <input class="btn btn-default" type="button" value="Submit"ng-click="submit(instruction)" />
+    <input class="btn btn-default" type="button" value="Reset" ng-click="reset()" />
+</form>

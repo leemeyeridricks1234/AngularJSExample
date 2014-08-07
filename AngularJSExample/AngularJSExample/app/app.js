@@ -1,4 +1,5 @@
 ﻿var dashboardApp = angular.module('dashboardApp', [
+    'highcharts-ng',
   'ngRoute',
   'dashboardControllers',
   'agServices'
@@ -27,6 +28,10 @@ dashboardApp.config(['$routeProvider',
           when('/funds', {
               templateUrl: 'fund-detail.html',
               controller: 'FundDetailCtrl'
+          }).
+          when('/chart', {
+              templateUrl: 'chart.html',
+              controller: 'ChartCtrl'
           }).
         otherwise({
             redirectTo: '/overview'
