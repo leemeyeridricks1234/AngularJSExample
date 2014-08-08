@@ -59,7 +59,7 @@
   <ItemGroup>
     <Content Include="app\app.js" />
     <Content Include="app\chartController.js" />
-    <Content Include="app\directives\chart.js" />
+    <Content Include="app\highchartDirective.js" />
     <Content Include="app\manageProfileController.js" />
     <Content Include="app\services.js" />
     <Content Include="app\submitTransactionController.js" />
@@ -67,7 +67,6 @@
     <Content Include="dashboard.html" />
     <Content Include="app\dashboardController.js" />
     <Content Include="app\fundDetailController.js" />
-    <None Include="data\basicAreaChart.json" />
     <Content Include="fund-detail.html" />
     <Content Include="Content\angular-ui.css" />
     <Content Include="Content\angular-ui.min.css" />

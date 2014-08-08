@@ -2,7 +2,7 @@ package com.christophergagne.sprayapidemo
 
 import akka.actor.{Actor, Props}
 import spray.routing._
-import com.christophergagne.sprayapidemo.services.AccountService
+import com.christophergagne.sprayapidemo.services.{InstructionService, AccountService}
 import ModelJsonProtocol._
 import spray.httpx.SprayJsonSupport
 import SprayJsonSupport._
@@ -23,13 +23,28 @@ trait SprayApiDemoService extends HttpService with CorsSupport {
           elevationService ! ElevationService.Process(long, lat)
       } ~
         cors {
+
           path("funds") {
             get {
               requestContext =>
                 val fundService = actorRefFactory.actorOf(Props(new FundService(requestContext)))
                 fundService ! FundService.Process()
             }
-          }
+          } ~
+            path("instructions") {
+              get {
+                requestContext =>
+                  val instructionService = actorRefFactory.actorOf(Props(new InstructionService(requestContext)))
+                  instructionService ! InstructionService.GetInstructions("")
+              } ~
+                post {
+                  entity(as[Instruction]) { instruction =>
+                    requestContext =>
+                      val instructionService = actorRefFactory.actorOf(Props(new InstructionService(requestContext)))
+                      instructionService ! InstructionService.AddInstruction(instruction)
+                  }
+                }
+            }
         } ~
         cors {
           path("account" / Segment) { accountNumber =>

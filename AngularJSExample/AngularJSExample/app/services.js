@@ -2,7 +2,7 @@
 
 agServices.factory('FundListService', ['$resource',
   function ($resource) {
-      return $resource('data/funds.json', {}, {
+      return $resource('http://localhost:8081/api/funds', {}, {
           query: { method: 'GET', isArray: true }
       });
       //data/funds.json
@@ -11,15 +11,18 @@ agServices.factory('FundListService', ['$resource',
 
 agServices.factory('FundDetailService', ['$resource',
   function ($resource) {
-      return $resource('data/funds/:code.json', {}, {
+      return $resource('http://localhost:8081/api/funds/:code', {}, {
           query: { method: 'GET', params: { code: 'code' }, isArray: true }
       });
   }]);
 
 
-agServices.factory('InstructionService', ['$resource',
+agServices.factory('Instruction', ['$resource',
   function ($resource) {
-      return $resource('data/instructions/', {}, {
-          create: { method: 'POST', params: { code: 'code' } }
-      });
+      return $resource("http://localhost:8081/api/instructions");
+  }]);
+
+agServices.factory('ElevationService', ['$resource',
+  function ($resource) {
+      return $resource("http://localhost:8081/api/ElevationService/42/80");
   }]);

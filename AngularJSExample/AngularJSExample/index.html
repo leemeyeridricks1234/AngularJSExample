@@ -36,8 +36,9 @@
     <script src="app/submitTransactionController.js"></script>
     <script src="app/manageProfileController.js"></script>
     <script src="app/chartController.js"></script>
+    <script src="app/elevationController.js"></script>
 
-    <script type='text/javascript' src="https://rawgithub.com/pablojim/highcharts-ng/master/src/highcharts-ng.js"></script>
+    <script src="app/highchartDirective.js"></script>
     <!--<script src="app/directives/chart.js"></script>-->
     
 </head>
@@ -77,8 +78,7 @@
                         <li ng-class="{ 'active': mainView === 'funds' }"><a href="#/funds">Fund Prices</a></li>
                         <li ng-class="{ 'active': mainView === 'submitTransaction' }"><a href="#/submitTransaction">Submit Transaction</a></li>
                         <li ng-class="{ 'active': mainView === 'chart' }"><a href="#/chart">Chart</a></li>
-                        <li><a href="#">Tax Certificates</a></li>
-                        <li><a href="#">Forms</a></li>
+                        <li ng-class="{ 'active': mainView === 'elevation' }"><a href="#/elevation">Elevation Example</a></li>
                     </ul>
                     <ul class="nav nav-sidebar" ng-show="mainView === 'overview'">
                         <li ng-class="{ 'active': subView === 'investmentSummary' }"><a href="#/overview/investmentSummary">Investment Summary</a></li>

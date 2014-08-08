@@ -18,6 +18,8 @@ case class User(username: String, personalDetails: PersonalDetails, contactDetai
 case class PersonalDetails(title: String, firstName: String, lastName: String, dateOfBirth: String, idNumber: String, investorNumber: String)
 case class ContactDetails(homePhone: String, workPhone: String, workFax: String, mobilePhone: String, email: String)
 
+case class Instruction(accountNumber: String, fundCode: String, amount: BigDecimal, instructionType: String)
+
 
 object ModelJsonProtocol extends DefaultJsonProtocol {
   implicit val dataPointFormat = jsonFormat2(DataPoint)
@@ -35,4 +37,6 @@ object ModelJsonProtocol extends DefaultJsonProtocol {
   implicit val contactFormat = jsonFormat5(ContactDetails)
   implicit val personalFormat = jsonFormat6(PersonalDetails)
   implicit val userFormat = jsonFormat3(User)
+
+  implicit val instructionFormat = jsonFormat4(Instruction)
 }

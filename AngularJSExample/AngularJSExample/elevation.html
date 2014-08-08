@@ -1,0 +1,22 @@
+﻿<h1 class="page-header">Elevation Example</h1>
+
+<form novalidate class="css-form">
+    <div class="form-group">
+        <label class="amount required control-label">
+            <abbr title="required">*</abbr>Longitude</label>
+        <div>
+            <input class="number amount required form-control" ng-model="elevation.longitude" placeholder="0" type="number" required  />
+        </div>
+        <label class="amount required control-label">
+            <abbr title="required">*</abbr>Latitude</label>
+        <div>
+            <input class="number amount required form-control" ng-model="elevation.latitude" placeholder="0" type="number" required  />
+        </div>
+    </div>
+ 
+    <input class="btn btn-default" type="button" value="Submit" ng-click="submit(elevation)" />
+</form>
+
+<h2 class="sub-header">Result</h2>
+{{elevationResult}}
+

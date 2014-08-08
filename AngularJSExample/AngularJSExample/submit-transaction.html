@@ -22,7 +22,7 @@
         <label class="amount required control-label">
             <abbr title="required">*</abbr>Amount</label>
         <div>
-            <input class="number amount required form-control" ng-model="amount" placeholder="R0.00" type="number" required  />
+            <input class="number amount required form-control" ng-model="instruction.amount" placeholder="R0.00" type="number" required  />
             <p class="help-block">Lorem ipsum dolor sit amet</p>
         </div>
     </div>
@@ -30,3 +30,24 @@
     <input class="btn btn-default" type="button" value="Submit"ng-click="submit(instruction)" />
     <input class="btn btn-default" type="button" value="Reset" ng-click="reset()" />
 </form>
+
+<h2 class="sub-header">Instructions</h2>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Account Number</th>
+            <th>Fund</th>
+            <th>Amount</th>
+            <th>Instruction Type</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="instruction in instructions" class="phone-listing">
+            <td>{{instruction.accountNumber}}</td>
+            <td>{{instruction.fundCode}}</td>
+            <td>{{instruction.amount}}%</td>
+            <td>{{instruction.instructionType}}</td>
+        </tr>
+    </tbody>
+</table>

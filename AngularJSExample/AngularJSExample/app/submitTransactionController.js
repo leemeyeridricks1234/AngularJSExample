@@ -1,12 +1,13 @@
-﻿dashboardControllers.controller('SubmitTransactionCtrl', ['$scope', '$routeParams', 'FundListService',
-  function ($scope, $routeParams, fundListService) {
+﻿dashboardControllers.controller('SubmitTransactionCtrl', ['$scope', '$routeParams', 'FundListService', 'Instruction',
+  function ($scope, $routeParams, fundListService, Instruction) {
       var instructionType = "Additional Contribution";
       //$scope.code = $routeParams.code;
 
       $scope.funds = fundListService.query(function (funds) {
           $scope.reset();
       });
-
+      
+      $scope.instructions = Instruction.query();
       $scope.instruction = {};
       
       $scope.accounts = [
@@ -20,7 +21,14 @@
       };
 
       $scope.submit = function (instruction) {
-          alert(instruction.fund);
+          var transaction = {
+              accountNumber: instruction.account.number,
+              fundCode: instruction.fund.name,
+              amount: instruction.amount,
+              instructionType: instructionType
+          };
+
+          Instruction.save(transaction);
       };
 
       

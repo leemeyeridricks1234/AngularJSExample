@@ -33,6 +33,10 @@ dashboardApp.config(['$routeProvider',
               templateUrl: 'chart.html',
               controller: 'ChartCtrl'
           }).
+          when('/elevation', {
+              templateUrl: 'elevation.html',
+              controller: 'ElevationCtrl'
+          }).
         otherwise({
             redirectTo: '/overview'
         });
